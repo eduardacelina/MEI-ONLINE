@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> MEI ONLINE — Serviços para Microempreendedores</title>
+  <meta name="description" content="Abertura de MEI, declaração anual, emissão de notas e regularização. Simples, rápido e sem burocracia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f172a;      /* slate-900 */
+      --card:#111827;    /* gray-900 */
+      --muted:#94a3b8;   /* slate-400 */
+      --brand:#22c55e;   /* green-500 */
+      --brand-2:#16a34a; /* green-600 */
+      --text:#e5e7eb;    /* gray-200 */
+      --white:#ffffff;
+      --shadow:0 10px 30px rgba(0,0,0,.25);
+      --radius:20px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; background:var(--bg); color:var(--text); font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:0 20px}
+    .btn{display:inline-block; padding:14px 20px; border-radius:14px; background:var(--brand); color:#071b12; font-weight:700; box-shadow:var(--shadow); transition:.2s transform ease, .2s filter ease}
+    .btn:hover{transform:translateY(-2px); filter:brightness(1.05)}
+    .btn-outline{background:transparent; color:var(--white); border:2px solid #334155}
+    header{position:sticky; top:0; backdrop-filter:saturate(1.2) blur(8px); background:rgba(15,23,42,.6); border-bottom:1px solid rgba(255,255,255,.06); z-index:50}
+    .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
+    .brand{display:flex; gap:10px; align-items:center; font-weight:800; letter-spacing:.3px}
+    .brand .logo{width:34px; height:34px; display:grid; place-items:center; border-radius:10px; background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#062d17; font-weight:900}
+    .nav a{opacity:.9}
+    .hero{padding:72px 0 40px; position:relative; overflow:hidden}
+    .hero .grid{display:grid; grid-template-columns:1.2fr 1fr; gap:36px}
+    .hero h1{font-size:clamp(28px, 5vw, 44px); line-height:1.1; margin:10px 0}
+    .hero p{color:var(--muted); font-size:18px; margin:18px 0 28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); box-shadow:var(--shadow)}
+    .hero .card{padding:22px}
+    .hero ul{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px; margin:0; padding:0; list-style:none}
+    .hero li{display:flex; align-items:flex-start; gap:10px; color:#cbd5e1}
+    .hero li svg{flex:0 0 20px}
+    .cta{display:flex; gap:12px; flex-wrap:wrap}
+    .illus{aspect-ratio:1/1; border-radius:var(--radius); background:radial-gradient(1200px 400px at -10% -20%, rgba(34,197,94,.25), transparent 50%), radial-gradient(1200px 400px at 120% 120%, rgba(16,185,129,.25), transparent 55%), linear-gradient(180deg, rgba(2,6,23,.6), rgba(2,6,23,.2)); border:1px solid rgba(255,255,255,.08)}
+
+    section{padding:54px 0}
+    .section-title{font-size:clamp(22px, 3.5vw, 32px); margin:0 0 18px}
+    .muted{color:var(--muted)}
+
+    .features{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px}
+    .feature{padding:20px}
+    .feature h3{margin:8px 0 6px; font-size:18px}
+
+    .services{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px}
+    .service{padding:20px}
+    .service h4{margin:8px 0 6px}
+
+    .pricing{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px}
+    .price-card{padding:24px}
+    .price{font-size:28px; font-weight:800}
+    .small{font-size:12px; color:#94a3b8}
+
+    .faq{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+    details{padding:18px; border-radius:14px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03)}
+    summary{cursor:pointer; font-weight:600}
+
+    footer{padding:36px 0 64px; border-top:1px solid rgba(255,255,255,.06)}
+
+    @media (max-width: 900px){
+      .hero .grid, .features, .services, .pricing, .faq{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <span class="logo">MEI</span>
+        <span>MEI Online</span>
+      </a>
+      <nav style="display:flex; gap:18px">
+        <a href="#servicos">Serviços</a>
+        <a href="#planos">Planos</a>
+        <a href="#faq">Dúvidas</a>
+        <a class="btn" href="https://wa.me/558599163078" target="_blank" rel="noopener">Fale no WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container hero">
+    <div class="grid">
+      <div>
+        <h1>Serviços para MEI — simples, rápido e sem burocracia</h1>
+        <p>Aqui você encontra ajuda de verdade para o seu MEI. Abertura, declaração, regularização e tudo o que você precisa para ficar tranquilo com o seu negócio. Simples, rápido e sem complicação.</p>
+
+        <div class="cta">
+          <a class="btn" href="https://wa.me/558599163078" target="_blank" rel="noopener">Quero atendimento</a>
+          <a class="btn btn-outline" href="#servicos">Ver serviços</a>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <ul>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18L4 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Abertura e regularização de MEI
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18L4 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Declaração anual (DASN‑SIMEI)
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18L4 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Emissão de NFS‑e e orientação
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18L4 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Parcelamento de DAS e consultas
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="illus card"></div>
+    </div>
+  </main>
+
+  <section id="servicos">
+    <div class="container">
+      <h2 class="section-title">O que fazemos</h2>
+      <p class="muted">Do zero à regularização: cuidamos da parte chata para você focar no seu negócio.</p>
+
+      <div class="services">
+        <article class="card service">
+          <h4>➡️ Abertura de MEI</h4>
+          <p>Cadastro rápido com CNAE correto, emissão do CNPJ e orientações iniciais.</p>
+        </article>
+        <article class="card service">
+          <h4>🧾 Declaração Anual (DASN‑SIMEI)</h4>
+          <p>Envio da sua declaração no prazo, conferência de dados e recibo.</p>
+        </article>
+        <article class="card service">
+          <h4>📄 Emissão de NFS‑e</h4>
+          <p>Configuração do sistema municipal, passo a passo e suporte na emissão.</p>
+        </article>
+        <article class="card service">
+          <h4>✅ Regularização</h4>
+          <p>Atualização de dados, baixa, reativação e correção de pendências.</p>
+        </article>
+        <article class="card service">
+          <h4>💳 DAS em dia</h4>
+          <p>Geração de guias, parcelamento e planejamento para evitar multas.</p>
+        </article>
+        <article class="card service">
+          <h4>🤝 Consultoria</h4>
+          <p>Dúvidas de rotina, organização financeira básica e boas práticas.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="planos" style="background:rgba(255,255,255,.02); border-top:1px solid rgba(255,255,255,.06); border-bottom:1px solid rgba(255,255,255,.06)">
+    <div class="container">
+      <h2 class="section-title">Planos simples</h2>
+      <p class="muted">Transparência total. Pague só pelo que precisa.</p>
+
+      <div class="pricing">
+        <div class="card price-card">
+          <h3>Essencial</h3>
+          <p class="muted">Para quem está começando</p>
+          <p class="price">R$ 0 — R$ 79</p>
+          <ul class="muted">
+            <li>Orientação inicial</li>
+            <li>Geração de DAS</li>
+            <li>Checklist de documentos</li>
+          </ul>
+          <p><a class="btn" href="https://wa.me/558599163078" target="_blank" rel="noopener">Quero esse</a></p>
+        </div>
+        <div class="card price-card">
+          <h3>Regular</h3>
+          <p class="muted">Para o dia a dia</p>
+          <p class="price">R$ 89 — R$ 159</p>
+          <ul class="muted">
+            <li>DAS mensal</li>
+            <li>Suporte por WhatsApp</li>
+            <li>Emissão de NFS‑e (apoio)</li>
+          </ul>
+          <p><a class="btn" href="https://wa.me/558599163078" target="_blank" rel="noopener">Quero esse</a></p>
+        </div>
+        <div class="card price-card">
+          <h3>Completo</h3>
+          <p class="muted">Para ficar tranquilo</p>
+          <p class="price">R$ 159 — R$ 199</p>
+          <ul class="muted">
+            <li>Declaração anual</li>
+            <li>Regularização básica</li>
+            <li>Consultoria mensal</li>
+          </ul>
+          <p><a class="btn" href="https://wa.me/558599163078" target="_blank" rel="noopener">Quero esse</a></p>
+        </div>
+      </div>
+      <p class="small">* Entre em contato e personalize conforme sua realidade.</p>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">Dúvidas frequentes</h2>
+      <div class="faq">
+        <details class="card">
+          <summary>O que preciso para abrir um MEI?</summary>
+          <p>Documento com foto, título de eleitor ou recibo do IRPF, endereço e atividade (CNAE). Fazemos tudo com você pelo WhatsApp.</p>
+        </details>
+        <details class="card">
+          <summary>Como pago o DAS?</summary>
+          <p>Geramos a guia mensal e te lembramos do vencimento. Também cuidamos de parcelamentos se necessário.</p>
+        </details>
+        <details class="card">
+          <summary>Vocês fazem a declaração anual?</summary>
+          <p>Sim! Preparamos e enviamos a DASN‑SIMEI e te entregamos o recibo.</p>
+        </details>
+        <details class="card">
+          <summary>Atendem todo o Brasil?</summary>
+          <p>Atendimento 100% online. Também podemos atender presencialmente na sua região (consulte disponibilidade).</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:grid; gap:8px">
+      <strong>MEI ONLINE</strong>
+      <span class="muted">Cuidamos do seu MEI para você cuidar do seu negócio.</span>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px">
+        <a class="btn" href="https://wa.me/558599163078" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      </div>
+      <span class="small">© <span id="year"></span> MEI ONLINE — Todos os direitos reservados.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
