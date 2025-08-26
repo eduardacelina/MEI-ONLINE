@@ -3,96 +3,138 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title> MEI ONLINE — Serviços para Microempreendedores</title>
+  <title>MEI ONLINE — Serviços para Microempreendedores</title>
   <meta name="description" content="Abertura de MEI, declaração anual, emissão de notas e regularização. Simples, rápido e sem burocracia." />
+  <meta property="og:title" content="MEI ONLINE — Serviços para Microempreendedores">
+  <meta property="og:description" content="Abertura de MEI, declaração anual, emissão de notas e regularização. Simples, rápido e sem burocracia.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
   <style>
-    :root{
-      --bg:#0f172a;      /* slate-900 */
-      --card:#111827;    /* gray-900 */
-      --muted:#94a3b8;   /* slate-400 */
-      --brand:#22c55e;   /* green-500 */
-      --brand-2:#16a34a; /* green-600 */
-      --text:#e5e7eb;    /* gray-200 */
-      --white:#ffffff;
-      --shadow:0 10px 30px rgba(0,0,0,.25);
-      --radius:20px;
+    .card-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px; /* arredonda cantos se quiser */
     }
-    *{box-sizing:border-box}
-    html,body{margin:0; padding:0; background:var(--bg); color:var(--text); font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;}
+
+      .illus.card {
+      background: url("logo.png") center/cover no-repeat;
+      width: 100%;
+      aspect-ratio: 1/1;       /* mantém quadrado */
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      
+    }
+
+    :root{
+      --bg:#f9fafb;      /* fundo claro */
+      --card:#ffffff;    /* fundo de cartões */
+      --muted:#6b7280;   /* cinza médio */
+      --brand:#22c55e;   /* verde-500 */
+      --brand-2:#16a34a; /* verde-600 */
+      --text:#111827;    /* quase preto */
+      --shadow:0 8px 24px rgba(0,0,0,.08);
+      --radius:18px;
+    }
+    *{box-sizing:border-box; margin:0; padding:0;}
+    html,body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif;
+      line-height:1.5;
+    }
     a{color:inherit; text-decoration:none}
+    a:focus-visible, button:focus-visible{outline:2px solid var(--brand); outline-offset:3px}
     .container{max-width:1100px; margin:0 auto; padding:0 20px}
-    .btn{display:inline-block; padding:14px 20px; border-radius:14px; background:var(--brand); color:#071b12; font-weight:700; box-shadow:var(--shadow); transition:.2s transform ease, .2s filter ease}
+    .btn{
+      display:inline-block; 
+      padding:14px 20px; 
+      border-radius:14px; 
+      background:var(--brand); 
+      color:#fff; 
+      font-weight:700; 
+      box-shadow:var(--shadow); 
+      transition:.2s transform ease, .2s filter ease
+    }
     .btn:hover{transform:translateY(-2px); filter:brightness(1.05)}
-    .btn-outline{background:transparent; color:var(--white); border:2px solid #334155}
-    header{position:sticky; top:0; backdrop-filter:saturate(1.2) blur(8px); background:rgba(15,23,42,.6); border-bottom:1px solid rgba(255,255,255,.06); z-index:50}
-    .nav{display:flex; align-items:center; justify-content:space-between; height:64px}
+    .btn-outline{
+      background:transparent; 
+      color:var(--brand-2); 
+      border:2px solid var(--brand-2)
+    }
+    header{
+      position:sticky; top:0; 
+      backdrop-filter:saturate(1.2) blur(8px); 
+      background:rgba(255,255,255,.9); 
+      border-bottom:1px solid #e5e7eb; 
+      z-index:50
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; height:74px}
     .brand{display:flex; gap:10px; align-items:center; font-weight:800; letter-spacing:.3px}
-    .brand .logo{width:34px; height:34px; display:grid; place-items:center; border-radius:10px; background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#062d17; font-weight:900}
-    .nav a{opacity:.9}
-    .hero{padding:72px 0 40px; position:relative; overflow:hidden}
+    .brand .logo{width:70px; height:70px; display:grid; place-items:center; border-radius:10px; background:linear-gradient(135deg, var(--brand), var(--brand-2)); color:#fff; font-weight:900}
+    .hero{padding:72px 0 40px}
     .hero .grid{display:grid; grid-template-columns:1.2fr 1fr; gap:36px}
-    .hero h1{font-size:clamp(28px, 5vw, 44px); line-height:1.1; margin:10px 0}
+    .hero h1{font-size:clamp(28px, 5vw, 44px); line-height:1.2; margin:10px 0}
     .hero p{color:var(--muted); font-size:18px; margin:18px 0 28px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); box-shadow:var(--shadow)}
+    .card{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); border:1px solid #e5e7eb}
     .hero .card{padding:22px}
-    .hero ul{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px; margin:0; padding:0; list-style:none}
-    .hero li{display:flex; align-items:flex-start; gap:10px; color:#cbd5e1}
-    .hero li svg{flex:0 0 20px}
+    .hero ul{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px; list-style:none}
+    .hero li{display:flex; align-items:flex-start; gap:10px; color:var(--text)}
+    .hero li svg{flex:0 0 20px; color:var(--brand-2)}
     .cta{display:flex; gap:12px; flex-wrap:wrap}
-    .illus{aspect-ratio:1/1; border-radius:var(--radius); background:radial-gradient(1200px 400px at -10% -20%, rgba(34,197,94,.25), transparent 50%), radial-gradient(1200px 400px at 120% 120%, rgba(16,185,129,.25), transparent 55%), linear-gradient(180deg, rgba(2,6,23,.6), rgba(2,6,23,.2)); border:1px solid rgba(255,255,255,.08)}
+    .illus{aspect-ratio:1/1; border-radius:var(--radius); background:linear-gradient(135deg, #d1fae5, #ecfdf5)}
 
     section{padding:54px 0}
     .section-title{font-size:clamp(22px, 3.5vw, 32px); margin:0 0 18px}
     .muted{color:var(--muted)}
 
-    .features{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px}
-    .feature{padding:20px}
-    .feature h3{margin:8px 0 6px; font-size:18px}
+    .services, .pricing, .faq{display:grid; gap:18px}
+    .services{grid-template-columns:repeat(auto-fit, minmax(260px,1fr))}
+    .pricing{grid-template-columns:repeat(auto-fit, minmax(260px,1fr))}
+    .faq{grid-template-columns:repeat(auto-fit, minmax(300px,1fr))}
 
-    .services{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px}
-    .service{padding:20px}
-    .service h4{margin:8px 0 6px}
+    .service, .price-card, details{padding:20px}
+    .price{font-size:28px; font-weight:800; margin:12px 0}
+    .small{font-size:13px; color:var(--muted)}
 
-    .pricing{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px}
-    .price-card{padding:24px}
-    .price{font-size:28px; font-weight:800}
-    .small{font-size:12px; color:#94a3b8}
-
-    .faq{display:grid; grid-template-columns:1fr 1fr; gap:18px}
-    details{padding:18px; border-radius:14px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03)}
+    details{border-radius:14px; border:1px solid #e5e7eb; background:#f9fafb}
     summary{cursor:pointer; font-weight:600}
 
-    footer{padding:36px 0 64px; border-top:1px solid rgba(255,255,255,.06)}
+    footer{padding:36px 0 64px; border-top:1px solid #e5e7eb; text-align:center}
+    footer strong{font-size:18px}
 
     @media (max-width: 900px){
-      .hero .grid, .features, .services, .pricing, .faq{grid-template-columns:1fr}
+      .hero .grid{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#top">
-        <span class="logo">MEI</span>
-        <span>MEI Online</span>
-      </a>
-      <nav style="display:flex; gap:18px">
-        <a href="#servicos">Serviços</a>
-        <a href="#planos">Planos</a>
-        <a href="#faq">Dúvidas</a>
-        <a class="btn" href="https://wa.me/558599163078" target="_blank" rel="noopener">Fale no WhatsApp</a>
-      </nav>
-    </div>
-  </header>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="Ir para início">
+      <!-- LOGO IMAGEM -->
+      <img src="logo.png" alt="Logo MEI ONLINE" class="logo">
+      <span>MEI ONLINE</span>
+    
+    <nav style="display:flex; gap:18px">
+      <a href="#servicos">Serviços</a>
+      <a href="#planos">Planos</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="#sobre-nos">Sobre Nós</a>
+      <a class="btn" href="https:///wa.me/558599163078" target="_blank" rel="noopener">Fale no WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
 
   <main class="container hero">
     <div class="grid">
       <div>
         <h1>Serviços para MEI — simples, rápido e sem burocracia</h1>
-        <p>Aqui você encontra ajuda de verdade para o seu MEI. Abertura, declaração, regularização e tudo o que você precisa para ficar tranquilo com o seu negócio. Simples, rápido e sem complicação.</p>
+        <p>Aqui você encontra ajuda de verdade para o seu MEI. Abertura, declaração, regularização e tudo o que você precisa para ficar tranquilo com o seu negócio.</p>
 
         <div class="cta">
           <a class="btn" href="https://wa.me/558599163078" target="_blank" rel="noopener">Quero atendimento</a>
@@ -101,107 +143,174 @@
 
         <div class="card" style="margin-top:18px">
           <ul>
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18L4 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Abertura e regularização de MEI
-            </li>
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18L4 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Declaração anual (DASN‑SIMEI)
-            </li>
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18L4 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Emissão de NFS‑e e orientação
-            </li>
-            <li>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18L4 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Parcelamento de DAS e consultas
-            </li>
+            <li>✅ Abertura e regularização de MEI</li>
+            <li>✅ Declaração anual (DASN-SIMEI)</li>
+            <li>✅ Emissão de NFS-e e orientação</li>
+            <li>✅ Parcelamento de DAS e consultas</li>
           </ul>
         </div>
       </div>
-      <div class="illus card"></div>
+      <div class="illus card" aria-hidden="true"></div>    
     </div>
   </main>
 
   <section id="servicos">
-    <div class="container">
-      <h2 class="section-title">O que fazemos</h2>
-      <p class="muted">Do zero à regularização: cuidamos da parte chata para você focar no seu negócio.</p>
+  <div class="container">
+    <h2 class="section-title">Serviços</h2>
+    <p class="muted">Do zero à regularização: cuidamos da parte chata para você focar no seu negócio.</p>
 
-      <div class="services">
+    <div class="carousel-wrapper" style="position:relative;">
+      <!-- Botões do Carrossel Redondos -->
+      <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+      <button class="carousel-btn next" aria-label="Próximo">&#10095;</button>
+
+      <!-- Carrossel -->
+      <div class="services-carousel">
         <article class="card service">
-          <h4>➡️ Abertura de MEI</h4>
+          <h3>➡️ Abertura de MEI</h3>
           <p>Cadastro rápido com CNAE correto, emissão do CNPJ e orientações iniciais.</p>
         </article>
+
         <article class="card service">
-          <h4>🧾 Declaração Anual (DASN‑SIMEI)</h4>
+          <h3>🧾 Declaração Anual (DASN-SIMEI)</h3>
           <p>Envio da sua declaração no prazo, conferência de dados e recibo.</p>
         </article>
+
         <article class="card service">
-          <h4>📄 Emissão de NFS‑e</h4>
+          <h3>📄 Emissão de NFS-e</h3>
           <p>Configuração do sistema municipal, passo a passo e suporte na emissão.</p>
         </article>
+
         <article class="card service">
-          <h4>✅ Regularização</h4>
+          <h3>✅ Regularização</h3>
           <p>Atualização de dados, baixa, reativação e correção de pendências.</p>
         </article>
+
         <article class="card service">
-          <h4>💳 DAS em dia</h4>
+          <h3>💳 DAS em dia</h3>
           <p>Geração de guias, parcelamento e planejamento para evitar multas.</p>
         </article>
+
         <article class="card service">
-          <h4>🤝 Consultoria</h4>
+          <h3>🤝 Consultoria</h3>
           <p>Dúvidas de rotina, organização financeira básica e boas práticas.</p>
         </article>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="planos" style="background:rgba(255,255,255,.02); border-top:1px solid rgba(255,255,255,.06); border-bottom:1px solid rgba(255,255,255,.06)">
-    <div class="container">
-      <h2 class="section-title">Planos simples</h2>
-      <p class="muted">Transparência total. Pague só pelo que precisa.</p>
+<style>
+  .services-carousel {
+    display:flex;
+    gap:18px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    padding:10px 0;
+  }
+  .services-carousel::-webkit-scrollbar {
+    display:none;
+  }
+  .services-carousel {
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+  }
+  .services-carousel .card {
+    flex:0 0 250px;
+    height:250px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .carousel-btn {
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:#22c55e;
+    color:#fff;
+    border:none;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    z-index:10;
+  }
+  .carousel-btn.prev { left:-20px; }
+  .carousel-btn.next { right:-20px; }
+</style>
 
-      <div class="pricing">
-        <div class="card price-card">
-          <h3>Essencial</h3>
-          <p class="muted">Para quem está começando</p>
-          <p class="price">R$ 0 — R$ 79</p>
-          <ul class="muted">
-            <li>Orientação inicial</li>
-            <li>Geração de DAS</li>
-            <li>Checklist de documentos</li>
-          </ul>
-          <p><a class="btn" href="https://wa.me/558599163078" target="_blank" rel="noopener">Quero esse</a></p>
-        </div>
-        <div class="card price-card">
-          <h3>Regular</h3>
-          <p class="muted">Para o dia a dia</p>
-          <p class="price">R$ 89 — R$ 159</p>
-          <ul class="muted">
-            <li>DAS mensal</li>
-            <li>Suporte por WhatsApp</li>
-            <li>Emissão de NFS‑e (apoio)</li>
-          </ul>
-          <p><a class="btn" href="https://wa.me/558599163078" target="_blank" rel="noopener">Quero esse</a></p>
-        </div>
-        <div class="card price-card">
-          <h3>Completo</h3>
-          <p class="muted">Para ficar tranquilo</p>
-          <p class="price">R$ 159 — R$ 199</p>
-          <ul class="muted">
-            <li>Declaração anual</li>
-            <li>Regularização básica</li>
-            <li>Consultoria mensal</li>
-          </ul>
-          <p><a class="btn" href="https://wa.me/558599163078" target="_blank" rel="noopener">Quero esse</a></p>
-        </div>
+<script>
+  const carousel = document.querySelector('.services-carousel');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+
+  const cardWidth = 250; // largura do card
+  const gap = 18;         // gap entre cards
+  const scrollAmount = cardWidth + gap;
+
+  prevBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+</script>
+
+  <section id="planos" style="background:#f9f9f9; padding:60px 0;">
+  <div class="container">
+    <h2 class="section-title" style="color:#111;">Nossos Planos</h2>
+    <p style="color:#555; margin-bottom:40px;">Transparência total. Pague só pelo que precisa.</p>
+
+    <div class="pricing" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:24px;">
+      
+      <!-- Plano Essencial -->
+      <div class="card price-card" style="padding:30px; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.1); background:#fff; border:1px solid #eee;">
+        <h3 style="margin-bottom:8px; color:#111;">Essencial</h3>
+        <p style="margin-bottom:16px; color:#777;">Para quem está começando</p>
+        <p class="price" style="font-size:28px; font-weight:800; color:#22c55e;">R$ 0 — R$ 79,00</p>
+        <ul style="margin:16px 0; padding-left:18px; color:#555; list-style:none;">
+          <li>✔ Orientação inicial</li>
+          <li>✔ Geração de DAS</li>
+          <li>✔ Checklist de documentos</li>
+        </ul>
+        <a class="btn" href="https:///wa.me/558599163078" target="_blank" rel="noopener" style="margin-top:12px; display:inline-block;">Quero esse</a>
       </div>
-      <p class="small">* Entre em contato e personalize conforme sua realidade.</p>
-    </div>
-  </section>
 
+      <!-- Plano Regular -->
+      <div class="card price-card" style="padding:30px; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.1); background:#fff; border:1px solid #eee;">
+        <h3 style="margin-bottom:8px; color:#111;">Regular</h3>
+        <p style="margin-bottom:16px; color:#777;">Para o dia a dia</p>
+        <p class="price" style="font-size:28px; font-weight:800; color:#22c55e;">R$ 89 — R$ 159,00</p>
+        <ul style="margin:16px 0; padding-left:18px; color:#555; list-style:none;">
+          <li>✔ DAS mensal</li>
+          <li>✔ Suporte por WhatsApp</li>
+          <li>✔ Emissão de NFS‑e (apoio)</li>
+        </ul>
+        <a class="btn" href="https://wa.me/558599163078" target="_blank" rel="noopener" style="margin-top:12px; display:inline-block;">Quero esse</a>
+      </div>
+
+      <!-- Plano Completo -->
+      <div class="card price-card" style="padding:30px; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.1); background:#fff; border:1px solid #eee;">
+        <h3 style="margin-bottom:8px; color:#111;">Completo</h3>
+        <p style="margin-bottom:16px; color:#777;">Para ficar tranquilo</p>
+        <p class="price" style="font-size:28px; font-weight:800; color:#22c55e;">R$ 199,00</p>
+        <ul style="margin:16px 0; padding-left:18px; color:#555; list-style:none;">
+          <li>✔ Declaração anual</li>
+          <li>✔ Regularização básica</li>
+          <li>✔ Consultoria mensal</li>
+        </ul>
+        <a class="btn" href="https://wa.me/558599163078" target="_blank" rel="noopener" style="margin-top:12px; display:inline-block;">Quero esse</a>
+      </div>
+
+    </div>
+    <p style="margin-top:24px; font-size:14px; color:#888;">Entre em contato e personalize conforme sua realidade.</p>
+  </div>
+</section>
   <section id="faq">
     <div class="container">
       <h2 class="section-title">Dúvidas frequentes</h2>
@@ -216,7 +325,7 @@
         </details>
         <details class="card">
           <summary>Vocês fazem a declaração anual?</summary>
-          <p>Sim! Preparamos e enviamos a DASN‑SIMEI e te entregamos o recibo.</p>
+          <p>Sim! Preparamos e enviamos a DASN-SIMEI e te entregamos o recibo.</p>
         </details>
         <details class="card">
           <summary>Atendem todo o Brasil?</summary>
@@ -225,15 +334,59 @@
       </div>
     </div>
   </section>
+<section id="sobre-nos" style="background:#f9f9f9; padding:60px 0;">
+  <div class="container" style="display:flex; flex-wrap:wrap; align-items:center; gap:40px;">
+    <!-- Lado esquerdo: texto + cards -->
+    <div style="flex:1; min-width:280px; text-align:center;">
+      <h2 class="section-title" style="color:#111;">Sobre Nós</h2>
+      <p class="muted" style="color:#555; margin:12px 0 24px;">
+        No Descomplica MEI, ajudamos microempreendedores a simplificar processos burocráticos. 
+        Nossa missão é oferecer suporte completo para abertura, regularização e gestão do seu MEI, 
+        permitindo que você foque no crescimento do seu negócio sem se preocupar com a papelada.
+      </p>
+
+      <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+        <!-- Card 1 -->
+        <div class="card" style="flex:0 0 200px; height:200px; padding:16px; text-align:center; border-radius:16px; box-shadow:0 6px 20px rgba(0,0,0,0.1); background:#fff; display:flex; flex-direction:column; justify-content:center;">
+          <h3>Nossa Missão</h3>
+          <p style="font-size:14px;">Facilitar a vida do microempreendedor, oferecendo serviços rápidos, simples e confiáveis.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" style="flex:0 0 200px; height:200px; padding:16px; text-align:center; border-radius:16px; box-shadow:0 6px 20px rgba(0,0,0,0.1); background:#fff; display:flex; flex-direction:column; justify-content:center;">
+          <h3>Nossa Visão</h3>
+          <p style="font-size:14px;">Ser referência em serviços de apoio ao MEI, promovendo crescimento sustentável e segurança jurídica.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" style="flex:0 0 200px; height:200px; padding:16px; text-align:center; border-radius:16px; box-shadow:0 6px 20px rgba(0,0,0,0.1); background:#fff; display:flex; flex-direction:column; justify-content:center;">
+          <h3>Nossos Valores</h3>
+          <p style="font-size:14px;">Transparência, confiança e dedicação total ao sucesso de cada microempreendedor que atendemos.</p>
+        </div>
+      </div>
+
+      <!-- Legenda curta abaixo dos cards -->
+      
+    </div>
+
+    <!-- Lado direito: imagem -->
+     <div style="flex:1; min-width:280px; display:flex; flex-direction:column; align-items:center; gap:12px;">
+      <img src="eduarda.jpeg" alt="Equipe Descomplica MEI" style="width:100%; max-width:450px; border-radius:16px; object-fit:cover;">
+      <p style="font-size:14px; color:#333; text-align:center; max-width:400px;">
+Graduanda em Ciências Contábeis na Universidade Federal do Ceará, atuo na área fiscal com experiência em rotinas para MEIs. Possuo formação técnica em Informática e busco desenvolver soluções práticas e eficientes no dia a dia profissional.      </p>
+    </div>
+  </div>
+</section>
+
 
   <footer>
     <div class="container" style="display:grid; gap:8px">
       <strong>MEI ONLINE</strong>
       <span class="muted">Cuidamos do seu MEI para você cuidar do seu negócio.</span>
-      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px">
+      <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:8px">
         <a class="btn" href="https://wa.me/558599163078" target="_blank" rel="noopener">Chamar no WhatsApp</a>
       </div>
-      <span class="small">© <span id="year"></span> MEI ONLINE — Todos os direitos reservados.</span>
+      <span class="small">© <span id="year"></span> MEI ONLINE— Todos os direitos reservados.</span>
     </div>
   </footer>
 
